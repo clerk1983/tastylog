@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write *.js",
     "lint": "eslint --fix *.js",
-    "fix": "npm run format && npm run lint"
+    "fix": "npm run format && npm run lint",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   },
   "author": "SHINDO Akira",
   "license": "MIT",
@@ -17,5 +24,22 @@
     "husky": "^6.0.0",
     "lint-staged": "^11.2.6",
     "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "@garafu/mysql-fileloader": "github:garafu/mysql-fileloader",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "1.4",
+    "csrf": "3.1",
+    "ejs": "3.1",
+    "express": "4.17",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "1.17",
+    "log4js": "^6.9.1",
+    "moment": "2.29",
+    "mysql": "2.18",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "round-to": "5.0",
+    "serve-favicon": "2.5"
   }
 }
