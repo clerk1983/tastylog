@@ -1,0 +1,21 @@
+{
+  "name": "tastylog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write *.js",
+    "lint": "eslint --fix *.js",
+    "fix": "npm run format && npm run lint"
+  },
+  "author": "SHINDO Akira",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "8.3",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.8.8"
+  }
+}
