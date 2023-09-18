@@ -10,9 +10,11 @@ router.get('/login', (req, res) => {
 })
 router.post('/login', authenticate())
 
-router.post('/logout', (req, res) => {
-  req.logout()
-  res.redirect('/account/login')
+router.post('/logout', (req, res, next) => {
+  req.logout((err) => {
+    if (err) return next(err)
+    res.redirect('/account/login')
+  })
 })
 
 router.use('/reviews', authorize(PRIVILEGE.NORMAL), require('./account.reviews.js'))
